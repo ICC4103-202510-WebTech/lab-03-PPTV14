@@ -1,0 +1,52 @@
+/*
+ *= require styles
+ *= require_tree .
+ *= require_self
+*/
+
+
+
+
+#lab3-container {
+    margin-top: 40px;
+  }
+  
+  #lab3-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  #lab3-subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  #about-container {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #about-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #about-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  #about-plan {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 15px;
+  }
+  

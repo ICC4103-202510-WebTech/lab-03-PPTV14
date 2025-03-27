@@ -1,23 +1,29 @@
 <div class="text-center">
   <h1>Contact Us</h1>
-  <p class="lead">Rellena la siguiente informacion y te contactaremos.</p>
+  <p class="lead">Rellena la siguiente información y te contactaremos.</p>
+
+  <% if flash[:notice] %>
+    <div class="alert alert-success"><%= flash[:notice] %></div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% end %>
 
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <%= form_with url: contact_path, method: :post, local: true, class: "card p-4 shadow" do %>
+      <%= form_with model: @message, url: submit_contact_path, local: true, class: "card p-4 shadow" do |f| %>
         <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" name="name" class="form-control" required>
+          <%= f.label :name, "Name", class: "form-label" %>
+          <%= f.text_field :name, class: "form-control", required: true %>
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" name="email" class="form-control" required>
+          <%= f.label :email, "Email", class: "form-label" %>
+          <%= f.email_field :email, class: "form-control", required: true %>
         </div>
         <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea name="message" class="form-control" rows="4" required></textarea>
+          <%= f.label :message, "Message", class: "form-label" %>
+          <%= f.text_area :message, class: "form-control", rows: 4, required: true %>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
